@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>60</x>
+      <y>400</y>
+      <w>280</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>/pokemon.model :: Pokemon/
+--
+-name : String
+-number : int
+-canEvole : boolean
+-health : int
+-attackPoints : int
+-enhancementModifier : double
+
+--
+methods/constructors</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>470</x>
+      <y>140</y>
+      <w>330</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>/pokemon.model :: Psychic/
+--
+
++Pyschic() : int
++confusion() : double
++futureSight() : String
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>40</x>
+      <y>50</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Pokemon Project Design
+Zach Stout
+bg=blue
+12.14.17</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>60</x>
+      <y>280</y>
+      <w>240</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>package :: ClassName
+--
+data members
+
+--
+methods/constructors</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>60</x>
+      <y>180</y>
+      <w>320</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>/package :: AbstractClass or interface/
+--
+
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>470</x>
+      <y>40</y>
+      <w>330</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>/pokemon.model :: Electric/
+--
+
++electroBall() : int
++thunderBolt() : int
++thunderWave() : int
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>470</x>
+      <y>230</y>
+      <w>330</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>/pokemon.model :: Dragon/
+--
+
++dracoMeteor() : int
++dragonRush() : int
++dragonPulse() : int
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
