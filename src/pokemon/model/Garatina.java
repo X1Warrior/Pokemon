@@ -8,20 +8,20 @@ public Garatina(int number, String name)
 }
 public int dracoMeteor(int strength)
 {
-	int sample = 183;
+	int sample = 283;
 	
 	return sample;
 }
 
 public int flameThrower(int strength)
 {
-	int sample = 190;
+	int sample = 290;
 	
 	return sample;
 }
 public int dragonPulse(int strength)
 {
-	int sample = 179;
+	int sample = 279;
 	
 	return sample;
 }
