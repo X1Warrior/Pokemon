@@ -37,9 +37,9 @@ public class Latias extends Pokemon implements Electric,Dragon
 		
 		return sample;
 	}
-	public int thunderWave(int strength)
+	public String thunderWave()
 	{
-		int sample = 183;
+		String sample = "stuned for 3 seconds";
 		
 		return sample;
 	}

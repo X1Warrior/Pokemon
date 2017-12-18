@@ -1,20 +1,18 @@
 package pokemon.view;
 
-import javax.swing.JFrame;
 import pokemon.controller.PokemonController;
-import pokemon.view.PokemonPanel;
+import javax.swing.JFrame;
 
 public class PokemonFrame extends JFrame
 {
-	{
-		private PokemonController PokemonController;
-		private PokemonPanel PokemonPanel;
+		private PokemonController appController;
+		private PokemonPanel appPanel;
 		
-		public PokemonFrame(PokemonController PokemonController)
+		public PokemonFrame(PokemonController appController)
 		{
 			super();
-			this.PokemonController = PokemonController;
-			this.PokemonPanel = new PokemonPanel(PokemonController);
+			this.appController = appController;
+			this.appPanel = new PokemonPanel(appController);
 			
 			setupFrame(); 
 			}
@@ -22,11 +20,10 @@ public class PokemonFrame extends JFrame
 		private void setupFrame()
 		{
 			this.setContentPane(PokemonPanel);
-			this.setTitle("chatting with the chatbot");
+			this.setTitle("PokeDex");
 			this.setResizable(false);
 			this.setSize(600,600);
 			this.setVisible(true);
 		}
-	}
 
 }
