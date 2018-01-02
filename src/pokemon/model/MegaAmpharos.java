@@ -1,6 +1,6 @@
 package pokemon.model;
 
-public class MegaAmpharos extends Ampharos implements Electric,Psychic
+public class MegaAmpharos extends Ampharos implements Psychic
 {
 	public MegaAmpharos()
 	{
