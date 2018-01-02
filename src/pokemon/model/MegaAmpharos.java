@@ -2,9 +2,28 @@ package pokemon.model;
 
 public class MegaAmpharos extends Ampharos implements Electric,Psychic
 {
+	public MegaAmpharos()
+	{
+		super(386, "Ampharos");
+	}
+	
+	public MegaAmpharos(String name)
+	{
+		super(386, name);
+		setup();
+	}
 	public MegaAmpharos(int number, String name)
 	{
 		super(number, name);
+		setup();
+	}
+	@Override
+	protected void setup()
+	{
+		this.setAttackPoints(350);
+		this.setCanEvolve(false);
+		this.setEnhancementModifier(5);
+		this.setHealthPoints(300);
 	}
 	public int electroBall(int strength)
 	{

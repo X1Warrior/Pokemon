@@ -1,11 +1,28 @@
 package pokemon.model;
 
 public class Charizard extends Pokemon implements Dragon
-{
+{	
+	public Charizard()
+	{
+		super(386, "Charizard");
+	}
 	
+	public Charizard(String name)
+	{
+		super(386, name);
+		setup();
+	}
 	public Charizard(int number, String name)
 	{
 		super(number, name);
+		setup();
+	}
+	protected void setup()
+	{
+		this.setAttackPoints(250);
+		this.setCanEvolve(false);
+		this.setEnhancementModifier(5);
+		this.setHealthPoints(300);
 	}
 	
 	public int dracoMeteor(int strength)

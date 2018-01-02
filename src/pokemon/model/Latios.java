@@ -19,8 +19,8 @@ public class Latios extends Pokemon implements Electric,Dragon
 	}
 	protected void setup()
 	{
-		this.setAttackPoints(250);
-		this.setCanEvolve(false);
+		this.setAttackPoints(350);
+		this.setCanEvolve(true);
 		this.setEnhancementModifier(5);
 		this.setHealthPoints(300);
 	}
