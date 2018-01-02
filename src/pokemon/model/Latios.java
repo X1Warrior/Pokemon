@@ -1,10 +1,28 @@
 package pokemon.model;
 
-public class Latias extends Pokemon implements Electric,Dragon
+public class Latios extends Pokemon implements Electric,Dragon
 {
-	public Latias(int number, String name)
+	public Latios()
+	{
+		super(386, "Latios");
+	}
+	
+	public Latios(String name)
+	{
+		super(386, name);
+		setup();
+	}
+	public Latios(int number, String name)
 	{
 		super(number, name);
+		setup();
+	}
+	protected void setup()
+	{
+		this.setAttackPoints(250);
+		this.setCanEvolve(false);
+		this.setEnhancementModifier(5);
+		this.setHealthPoints(300);
 	}
 	public int dracoMeteor(int strength)
 	{
