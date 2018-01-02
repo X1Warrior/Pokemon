@@ -59,7 +59,6 @@ public class PokemonPanel extends JPanel
 		SaveButton = new JButton("Save");
 		LoadButton = new JButton("Load");
 		infoLabel = new JLabel("#");
-		appLayout.putConstraint(SpringLayout.WEST, infoLabel, 0, SpringLayout.WEST, ResetButton);
 
 		nameLabel = new JLabel("Name");
 		appLayout.putConstraint(SpringLayout.WEST, nameLabel, 0, SpringLayout.WEST, ResetButton);
@@ -130,6 +129,7 @@ public class PokemonPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.SOUTH, ResetButton, -10, SpringLayout.SOUTH, this);
 		appLayout.putConstraint(SpringLayout.EAST, ResetButton, -112, SpringLayout.EAST, this);
 		appLayout.putConstraint(SpringLayout.NORTH, infoLabel, 0, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.WEST, infoLabel, 0, SpringLayout.WEST, ResetButton);
 
 	}
 	private void setupListeners()
