@@ -20,7 +20,7 @@ public class Ampharos extends Pokemon implements Electric
 	protected void setup()
 	{
 		this.setAttackPoints(250);
-		this.setCanEvolve(false);
+		this.setCanEvolve(true);
 		this.setEnhancementModifier(5);
 		this.setHealthPoints(300);
 	}

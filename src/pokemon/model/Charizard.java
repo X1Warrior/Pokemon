@@ -20,9 +20,9 @@ public class Charizard extends Pokemon implements Dragon
 	protected void setup()
 	{
 		this.setAttackPoints(250);
-		this.setCanEvolve(false);
+		this.setCanEvolve(true);
 		this.setEnhancementModifier(5);
-		this.setHealthPoints(300);
+		this.setHealthPoints(264);
 	}
 	
 	public int dracoMeteor(int strength)
