@@ -1,25 +1,34 @@
 package pokemon.controller;
 
 
+	import pokemon.model.*;
+	import pokemon.view.PokemonFrame;
+	
 	import java.util.List;
 	import java.util.ArrayList;
-	import pokemon.model.*;
-	import pokemon.view.*;
+
 
 	public class PokemonController 
 	{
 		private List<Pokemon> pokedex;
 		
-		PokemonFrame frame;
+		private PokemonFrame appframe;
 
-		public void start()
+		public PokemonController()
 		{
-			frame = new PokemonFrame(this);
+			pokedex = new ArrayList<Pokemon>();
+			appframe = new PokemonFrame(this);
 		}
 		
-		public List<Pokemon> getPokedex()
+		public void buildPokedex()
 		{
-			return pokedex;
+			pokedex.add(new Latios());
+			pokedex.add(new Ampharos());
+			pokedex.add(new MegaAmpharos());
+			pokedex.add(new Charizard());
+			pokedex.add(new Garatina());
+			pokedex.add(new Alakazam());
+			
 		}
 		
 		public boolean isValidInt(String sample) 
