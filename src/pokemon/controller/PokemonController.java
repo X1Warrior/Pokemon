@@ -30,6 +30,22 @@ package pokemon.controller;
 			pokedex.add(new Alakazam());
 			
 		}
+		public List<Pokemon> getPokedex()
+		{
+			return pokedex;
+		}
+		
+		public String [] convertPokedex()
+		{
+			String [] names = new String [pokedex.size()];
+			
+			for(int index = 0; index < pokedex.size(); index++)
+			{
+				names[index] = pokedex.get(index).getName();
+			}
+			
+			return names;
+		}
 		
 		public boolean isValidInt(String sample) 
 		{
