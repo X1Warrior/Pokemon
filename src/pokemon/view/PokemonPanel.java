@@ -1,8 +1,9 @@
 package pokemon.view;
 
 import pokemon.controller.PokemonController;
-import java.awt.Color;
 import javax.swing.*;
+
+import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -18,7 +19,7 @@ public class PokemonPanel extends JPanel
 	private JLabel healthLabel;
 	private JLabel nameLabel;
 	private JLabel iconLabel;
-	
+
 	private JCheckBox evolvableBox;
 	private JTextField nameField;
 	private JTextField numberField;
@@ -28,17 +29,17 @@ public class PokemonPanel extends JPanel
 
 	private JTextArea descriptionArea;
 	private JTextArea typeArea;
-	
+
 	private JButton ResetButton;
 	private JButton SaveButton;
 	private JButton LoadButton;
 	private JComboBox pokedexDropdown;
-	
+
 	private JPanel firstType;
 	private JPanel secondType;
 	private JPanel thirdType;
 	private JPanel fourthType;
-	
+
 	private void updatePokedexInfo(int index)
 	{
 		nameField.setText(appController.getPokedex().get(index).getName());
@@ -47,47 +48,48 @@ public class PokemonPanel extends JPanel
 		attackField.setText(appController.getPokedex().get(index).getAttackPoints() + "");
 		healthField.setText(appController.getPokedex().get(index).getHealthPoints() + "");
 		modifierField.setText(appController.getPokedex().get(index).getEnhancementModifier() + "");
-		
-		descriptionArea.setText(appController.getPokedex());
+//
+//		descriptionArea.setText(appController.getPokedex());
 	}
-	
+
 	public PokemonPanel(PokemonController appController)
 	{
-		
+
 		super();
 		this.appController = appController;
-		
-		//Initialize GUI data members
+
+		// Initialize GUI data members
 		appLayout = new SpringLayout();
-		
+
 		ResetButton = new JButton("Reset");
 		SaveButton = new JButton("Save");
 		LoadButton = new JButton("Load");
-		
+
 		infoLabel = new JLabel("Number");
 		nameLabel = new JLabel("Name");
 		healthLabel = new JLabel("HealthPoints");
 		attackLabel = new JLabel("Attack");
 		evolvableLabel = new JLabel("Can evolve");
 		modifierLabel = new JLabel("Enhancement");
+		
 		pokedexDropdown = new JComboBox();
-
+		
 		nameField = new JTextField("");
 		numberField = new JTextField("");
 		attackField = new JTextField("");
 		healthField = new JTextField("");
 		modifierField = new JTextField("");
 		
-		iconLabel = new JLabel("", new ImageIcon(getClass().getResource("pokemon/view/Pokemonimages/Alakazam.png")), JLabel.CENTER);
+		iconLabel = new JLabel("", new ImageIcon(getClass().getResource("pokemon/view/PokemonImages/Pics/Alakazam.png")), JLabel.CENTER);
 		
-		descriptionArea = new JTextArea("5, 10");
-		typeArea = new JTextArea("4, 15");
+		descriptionArea = new JTextArea(5, 10);
+		typeArea = new JTextArea(4, 15);
 		
 		firstType = new JPanel();
 		secondType = new JPanel();
 		thirdType = new JPanel();
 		fourthType = new JPanel();
-	
+
 		setupComboBox();
 		setupTypePanels();
 		setupPanel();
@@ -95,8 +97,9 @@ public class PokemonPanel extends JPanel
 		updateTypePanels();
 		setupLayout();
 		setupListeners();
-		
+
 	}
+
 	private void setupComboBox()
 	{
 		DefaultComboBoxModel pokemonModel = new DefaultComboBoxModel(appController.convertPokedex());
@@ -105,13 +108,13 @@ public class PokemonPanel extends JPanel
 
 	private void setupTypePanels()
 	{
-		firstType.setSize(50,50);
-		secondType.setSize(50,50);
-		thirdType.setSize(50,50);
-		fourthType.setSize(50,50);
+		firstType.setSize(50, 50);
+		secondType.setSize(50, 50);
+		thirdType.setSize(50, 50);
+		fourthType.setSize(50, 50);
 	}
 
- 	private void setupPanel()
+	private void setupPanel()
 	{
 		this.setBackground(Color.CYAN);
 		this.setLayout(appLayout);
@@ -132,54 +135,79 @@ public class PokemonPanel extends JPanel
 		this.add(descriptionArea);
 		this.add(typeArea);
 		this.add(pokedexDropdown);
+		this.add(iconLabel);
 	}
- 	
- 	private void updateImage()
- 	{
- 		
- 	}
- 	
- 	private void updateTypePanels()
- 	{
- 	String[] types = appController.getPokedex().get(pokedexDropdown.getSelectedIndex()).getPokemonTypes();	
- 	
- 	// Change this to match your 3 minimum tpyes in your pokedex
- 	if (types[0].equals("Electric"))
- 	{
- 		firstType.setBackground(Color.YELLOW);
- 	}
- 	else if (types[0].equals("Dragon"))
- 	{
- 		firstType.setBackground(Color.MAGENTA);
- 	}
- 	else if (types[0].equals("Psychic"))
- 	{
- 		firstType.setBackground(Color.BLUE);
- 	}
- 	else
- 	{
- 		firstType.setBackground(Color.WHITE);
- 	}
- 	
- 	if (types.length >1)
- 	{
- 		if(types[1].equals("Electric"))
- 		{
- 			secondType.setBackground(Color.YELLOW);
- 		}
- 		//... continue as above
- 		
- 		if (types.length == 3)
- 		{
- 			if (types[2].equals("Electric"))
- 			{
- 				thirdType.setBackground(Color.MAGENTA);
- 			}
- 		}
- 	}
- 	}
- 	
- 	private void setupLayout()
+
+	private void updateImage()
+	{
+
+	}
+
+	private void updateTypePanels()
+	{
+		String[] types = appController.getPokedex().get(pokedexDropdown.getSelectedIndex()).getPokemonTypes();
+
+		// Change this to match your 3 minimum tpyes in your pokedex
+		try
+		{
+			switch (types[0])
+			{
+			case "Electric":
+				firstType.setBackground(Color.YELLOW);
+				break;
+			case "Psychic":
+				firstType.setBackground(Color.BLUE);
+				break;
+			case "Dragon":
+				firstType.setBackground(Color.MAGENTA);
+				break;
+			}
+		}
+		catch (Exception e)
+		{
+
+		}
+		try
+		{
+			switch (types[1])
+			{
+			case "Electric":
+				secondType.setBackground(Color.YELLOW);
+				break;
+			case "Psychic":
+				secondType.setBackground(Color.BLUE);
+				break;
+			case "Dragon":
+				secondType.setBackground(Color.MAGENTA);
+				break;
+			}
+		}
+		catch (Exception e)
+		{
+
+		}
+		try
+		{
+			switch (types[0])
+			{
+			case "Electric":
+				thirdType.setBackground(Color.YELLOW);
+				break;
+			case "Psychic":
+				thirdType.setBackground(Color.BLUE);
+				break;
+			case "Dragon":
+				thirdType.setBackground(Color.MAGENTA);
+				break;
+			}
+		}
+		catch (Exception e)
+		{
+
+		}
+	}
+
+	private void setupLayout()
 	{
 		appLayout.putConstraint(SpringLayout.NORTH, LoadButton, 0, SpringLayout.NORTH, SaveButton);
 		appLayout.putConstraint(SpringLayout.EAST, LoadButton, -6, SpringLayout.WEST, ResetButton);
@@ -208,13 +236,19 @@ public class PokemonPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.SOUTH, healthLabel, -236, SpringLayout.SOUTH, this);
 		appLayout.putConstraint(SpringLayout.SOUTH, nameLabel, -6, SpringLayout.NORTH, healthLabel);
 		appLayout.putConstraint(SpringLayout.EAST, healthLabel, 0, SpringLayout.EAST, ResetButton);
-		appLayout.putConstraint(SpringLayout.SOUTH, pokedexDropdown, -73, SpringLayout.NORTH, LoadButton);
-		appLayout.putConstraint(SpringLayout.EAST, pokedexDropdown, 0, SpringLayout.EAST, LoadButton);
+		appLayout.putConstraint(SpringLayout.WEST, typeArea, 6, SpringLayout.EAST, descriptionArea);
+		appLayout.putConstraint(SpringLayout.SOUTH, typeArea, -3, SpringLayout.NORTH, ResetButton);
+		appLayout.putConstraint(SpringLayout.SOUTH, pokedexDropdown, -23, SpringLayout.NORTH, descriptionArea);
+		appLayout.putConstraint(SpringLayout.WEST, descriptionArea, 10, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, descriptionArea, 0, SpringLayout.SOUTH, SaveButton);
+		appLayout.putConstraint(SpringLayout.WEST, nameField, 6, SpringLayout.EAST, numberField);
+		appLayout.putConstraint(SpringLayout.NORTH, nameField, -5, SpringLayout.NORTH, nameLabel);
+		appLayout.putConstraint(SpringLayout.WEST, pokedexDropdown, 10, SpringLayout.WEST, this);
 	}
-	
+
 	private void setupListeners()
 	{
-		pokedexDropdown.addActionListener(new ActionListener() 
+		pokedexDropdown.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent selection)
 			{
@@ -226,5 +260,5 @@ public class PokemonPanel extends JPanel
 			}
 		});
 	}
-	
+
 }

@@ -74,5 +74,10 @@ package pokemon.controller;
 			
 			return true;
 		}
+
+		public void start()
+		{
+			
+		}
 	}
 
