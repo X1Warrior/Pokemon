@@ -23,10 +23,10 @@ public abstract class Pokemon
 		ArrayList<String> parentType = new ArrayList<String>();
 		Class<?> currentClass = this.getClass();
 		
-		while(currentClass.getuperclass() != null)
+		while(currentClass.getSuperclass() != null)
 		{
 		Class<?> [] pokemonTypes = getClass().getInterfaces();
-		types = new String[types.length];
+		types = new String[pokemonTypes.length];
 		
 		for(int index = 0; index < types.length; index++)
 		{
@@ -34,10 +34,21 @@ public abstract class Pokemon
 			currentInterface = currentInterface.replaceAll(this.getClass().getPackage().getName() + ".", "");
 			if(!parentType.contains(currentInterface))
 			{
-				parentType.add(currentInterface)
+				parentType.add(currentInterface);
 			}
 		}
+		
+		currentClass = currentClass.getSuperclass();
+		
 		}
+		
+		types = new String [parentType.size()];
+		
+		for(int index = 0; index < parentType.size(); index++)
+		{
+			types[index] = parentType.get(index);
+		}
+		
 		return types;
 	}
 	

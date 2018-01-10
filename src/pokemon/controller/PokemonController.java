@@ -12,15 +12,16 @@ package pokemon.controller;
 	{
 		private List<Pokemon> pokedex;
 		
-		private PokemonFrame appframe;
+		private PokemonFrame appFrame;
 
 		public PokemonController()
 		{
 			pokedex = new ArrayList<Pokemon>();
-			appframe = new PokemonFrame(this);
+			buildPokedex();
+			appFrame = new PokemonFrame(this);
 		}
 		
-		public void buildPokedex()
+		private void buildPokedex()
 		{
 			pokedex.add(new Latios());
 			pokedex.add(new Ampharos());
