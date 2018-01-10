@@ -1,6 +1,6 @@
 package pokemon.model;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public abstract class Pokemon
 {

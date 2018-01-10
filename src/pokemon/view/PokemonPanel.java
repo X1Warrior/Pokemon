@@ -110,10 +110,10 @@ public class PokemonPanel extends JPanel
 		iconLabel = new JLabel("", new ImageIcon(getClass().getResource("/pokemon/view/PokemonImages/Pics/Pokemon.png")), JLabel.CENTER);
 		appLayout.putConstraint(SpringLayout.NORTH, iconLabel, 26, SpringLayout.NORTH, this);
 		appLayout.putConstraint(SpringLayout.WEST, iconLabel, 34, SpringLayout.WEST, this);
-		appLayout.putConstraint(SpringLayout.SOUTH, iconLabel, -14, SpringLayout.NORTH, pokedexDropdown);
+		appLayout.putConstraint(SpringLayout.SOUTH, iconLabel, -43, SpringLayout.NORTH, pokedexDropdown);
+		appLayout.putConstraint(SpringLayout.EAST, iconLabel, 0, SpringLayout.EAST, pokedexDropdown);
 		
 		descriptionArea = new JTextArea(5, 10);
-		appLayout.putConstraint(SpringLayout.EAST, iconLabel, 48, SpringLayout.EAST, descriptionArea);
 
 		typeArea = new JTextArea(4, 15);
 
