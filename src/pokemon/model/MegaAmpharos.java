@@ -4,7 +4,7 @@ public class MegaAmpharos extends Ampharos implements Psychic
 {
 	public MegaAmpharos()
 	{
-		super(386, "Ampharos");
+		super(386, "MegaAmpharos");
 	}
 	
 	public MegaAmpharos(String name)
