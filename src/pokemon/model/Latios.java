@@ -5,6 +5,7 @@ public class Latios extends Pokemon implements Electric,Dragon
 	public Latios()
 	{
 		super(386, "Latios");
+		setup();
 	}
 	
 	public Latios(String name)

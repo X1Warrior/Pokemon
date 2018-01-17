@@ -5,6 +5,7 @@ public class Ampharos extends Pokemon implements Electric
 	public Ampharos()
 	{
 		super(386, "Ampharos");
+		setup();
 	}
 	
 	public Ampharos(String name)

@@ -58,6 +58,7 @@ package pokemon.controller;
 			selected.setName(name);
 			selected.setHealthPoints(health);
 			
+			FileController.savePokemonToFile((ArrayList<Pokemon>) pokedex);
 		}
 		
 		

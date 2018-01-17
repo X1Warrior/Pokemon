@@ -5,6 +5,7 @@ public class Garatina extends Pokemon implements Dragon
 	public Garatina()
 	{
 		super(386, "Garatina");
+		setup();
 	}
 	
 	public Garatina(String name)

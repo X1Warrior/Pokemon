@@ -1,0 +1,6 @@
+Latios,386,0,0,0.0,false
+Ampharos,386,1,0,0.0,false
+MegaAmpharos,386,300,350,5.0,false
+Charizard,386,0,0,0.0,false
+Garatina,386,0,0,0.0,false
+Alakazam,386,0,0,0.0,false

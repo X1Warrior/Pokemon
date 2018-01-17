@@ -5,6 +5,7 @@ public class Charizard extends Pokemon implements Dragon
 	public Charizard()
 	{
 		super(386, "Charizard");
+		setup();
 	}
 	
 	public Charizard(String name)

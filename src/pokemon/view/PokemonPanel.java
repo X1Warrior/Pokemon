@@ -56,6 +56,7 @@ public class PokemonPanel extends JPanel
 		LoadButton = new JButton("Load");
 		
 		evolvableBox = new JCheckBox("");
+
 		infoLabel = new JLabel("Number");
 		nameLabel = new JLabel("Name");
 		healthLabel = new JLabel("HealthPoints");
@@ -65,14 +66,14 @@ public class PokemonPanel extends JPanel
 
 		pokedexDropdown = new JComboBox();
 
-		nameField = new JTextField("");
-		numberField = new JTextField("");
-		attackField = new JTextField("");
-		healthField = new JTextField("");
+		nameField = new JTextField("Name");
+		numberField = new JTextField("#");
+		attackField = new JTextField("AP");
+		healthField = new JTextField("HP");
 		modifierField = new JTextField("");
 
-		
 		iconLabel = new JLabel("", new ImageIcon(getClass().getResource("/pokemon/view/PokemonImages/Pics/Pokemon.png")), JLabel.CENTER);
+
 
 		
 		descriptionArea = new JTextArea(5, 10);
@@ -133,7 +134,7 @@ public class PokemonPanel extends JPanel
 
 	private void setupPanel()
 	{
-		this.setBackground(Color.CYAN);
+		this.setBackground(Color.LIGHT_GRAY);
 		this.setLayout(appLayout);
 		this.add(saveButton);
 		this.add(ResetButton);
@@ -244,10 +245,10 @@ public class PokemonPanel extends JPanel
 
 	private void setupLayout()
 	{
-		appLayout.putConstraint(SpringLayout.NORTH, LoadButton, 0, SpringLayout.NORTH, SaveButton);
+		appLayout.putConstraint(SpringLayout.NORTH, LoadButton, 0, SpringLayout.NORTH, saveButton);
 		appLayout.putConstraint(SpringLayout.EAST, LoadButton, -6, SpringLayout.WEST, ResetButton);
-		appLayout.putConstraint(SpringLayout.NORTH, SaveButton, 0, SpringLayout.NORTH, ResetButton);
-		appLayout.putConstraint(SpringLayout.WEST, SaveButton, 6, SpringLayout.EAST, ResetButton);
+		appLayout.putConstraint(SpringLayout.NORTH, saveButton, 0, SpringLayout.NORTH, ResetButton);
+		appLayout.putConstraint(SpringLayout.WEST, saveButton, 6, SpringLayout.EAST, ResetButton);
 		appLayout.putConstraint(SpringLayout.SOUTH, ResetButton, -10, SpringLayout.SOUTH, this);
 		appLayout.putConstraint(SpringLayout.EAST, ResetButton, -112, SpringLayout.EAST, this);
 		appLayout.putConstraint(SpringLayout.SOUTH, typeArea, -3, SpringLayout.NORTH, ResetButton);
@@ -265,28 +266,29 @@ public class PokemonPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.WEST, modifierField, 36, SpringLayout.EAST, modifierLabel);
 		appLayout.putConstraint(SpringLayout.EAST, modifierField, -62, SpringLayout.EAST, this);
 		appLayout.putConstraint(SpringLayout.WEST, modifierLabel, 0, SpringLayout.WEST, ResetButton);
-		appLayout.putConstraint(SpringLayout.NORTH, evolvableLabel, 22, SpringLayout.SOUTH, healthLabel);
-		appLayout.putConstraint(SpringLayout.WEST, evolvableLabel, 0, SpringLayout.WEST, ResetButton);
-		appLayout.putConstraint(SpringLayout.NORTH, healthLabel, 23, SpringLayout.SOUTH, nameLabel);
-		appLayout.putConstraint(SpringLayout.EAST, healthLabel, 0, SpringLayout.EAST, ResetButton);
-		appLayout.putConstraint(SpringLayout.NORTH, nameLabel, 26, SpringLayout.SOUTH, infoLabel);
-		appLayout.putConstraint(SpringLayout.NORTH, infoLabel, 26, SpringLayout.NORTH, this);
-		appLayout.putConstraint(SpringLayout.WEST, infoLabel, 0, SpringLayout.WEST, ResetButton);
-		appLayout.putConstraint(SpringLayout.WEST, attackLabel, 0, SpringLayout.WEST, ResetButton);
 		appLayout.putConstraint(SpringLayout.NORTH, modifierLabel, -34, SpringLayout.NORTH, this);
-		appLayout.putConstraint(SpringLayout.NORTH, attackLabel, 23, SpringLayout.SOUTH, evolvableLabel);
-		appLayout.putConstraint(SpringLayout.EAST, evolvableBox, -21, SpringLayout.EAST, this);
-		appLayout.putConstraint(SpringLayout.NORTH, healthField, -5, SpringLayout.NORTH, healthLabel);
-		appLayout.putConstraint(SpringLayout.WEST, healthField, 71, SpringLayout.EAST, healthLabel);
-		appLayout.putConstraint(SpringLayout.EAST, healthField, -31, SpringLayout.EAST, this);
-		appLayout.putConstraint(SpringLayout.NORTH, attackField, -5, SpringLayout.NORTH, attackLabel);
-		appLayout.putConstraint(SpringLayout.EAST, attackField, 0, SpringLayout.EAST, SaveButton);
-		appLayout.putConstraint(SpringLayout.NORTH, numberField, -5, SpringLayout.NORTH, infoLabel);
-		appLayout.putConstraint(SpringLayout.EAST, numberField, 0, SpringLayout.EAST, SaveButton);
-		appLayout.putConstraint(SpringLayout.EAST, nameLabel, -108, SpringLayout.WEST, nameField);
+		appLayout.putConstraint(SpringLayout.EAST, attackField, 0, SpringLayout.EAST, saveButton);
+		appLayout.putConstraint(SpringLayout.EAST, numberField, 0, SpringLayout.EAST, saveButton);
 		appLayout.putConstraint(SpringLayout.NORTH, nameField, -5, SpringLayout.NORTH, nameLabel);
-		appLayout.putConstraint(SpringLayout.EAST, nameField, 0, SpringLayout.EAST, SaveButton);
-		appLayout.putConstraint(SpringLayout.NORTH, evolvableBox, 0, SpringLayout.NORTH, evolvableLabel);
+		appLayout.putConstraint(SpringLayout.EAST, nameField, 0, SpringLayout.EAST, saveButton);
+		appLayout.putConstraint(SpringLayout.WEST, nameLabel, 99, SpringLayout.EAST, iconLabel);
+		appLayout.putConstraint(SpringLayout.NORTH, evolvableBox, 17, SpringLayout.SOUTH, healthField);
+		appLayout.putConstraint(SpringLayout.NORTH, healthField, 13, SpringLayout.SOUTH, nameField);
+		appLayout.putConstraint(SpringLayout.WEST, healthField, 64, SpringLayout.EAST, healthLabel);
+		appLayout.putConstraint(SpringLayout.EAST, healthField, -31, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.NORTH, healthLabel, 5, SpringLayout.NORTH, healthField);
+		appLayout.putConstraint(SpringLayout.NORTH, attackField, 11, SpringLayout.SOUTH, evolvableBox);
+		appLayout.putConstraint(SpringLayout.NORTH, attackLabel, 5, SpringLayout.NORTH, attackField);
+		appLayout.putConstraint(SpringLayout.NORTH, numberField, 21, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.NORTH, infoLabel, 5, SpringLayout.NORTH, numberField);
+		appLayout.putConstraint(SpringLayout.WEST, nameField, -84, SpringLayout.EAST, saveButton);
+		appLayout.putConstraint(SpringLayout.WEST, attackLabel, 0, SpringLayout.WEST, evolvableLabel);
+		appLayout.putConstraint(SpringLayout.NORTH, evolvableLabel, 0, SpringLayout.NORTH, evolvableBox);
+		appLayout.putConstraint(SpringLayout.WEST, evolvableLabel, 0, SpringLayout.WEST, healthLabel);
+		appLayout.putConstraint(SpringLayout.WEST, infoLabel, 0, SpringLayout.WEST, healthLabel);
+		appLayout.putConstraint(SpringLayout.WEST, healthLabel, 0, SpringLayout.WEST, nameLabel);
+		appLayout.putConstraint(SpringLayout.NORTH, nameLabel, 26, SpringLayout.SOUTH, infoLabel);
+		appLayout.putConstraint(SpringLayout.EAST, evolvableBox, 0, SpringLayout.EAST, saveButton);
 	}
 
 	private void setupListeners()

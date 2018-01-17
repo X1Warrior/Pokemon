@@ -5,6 +5,7 @@ public class Alakazam extends Pokemon implements Psychic
 	public Alakazam()
 	{
 		super(386, "Alakazam");
+		setup();
 	}
 	
 	public Alakazam(String name)
