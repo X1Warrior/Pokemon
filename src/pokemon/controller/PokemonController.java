@@ -61,7 +61,7 @@ package pokemon.controller;
 		}
 		
 		
-		public boolean isValidInt(String sample) 
+		public boolean isValidInteger(String sample) 
 		{
 			try 
 			{
@@ -88,6 +88,7 @@ package pokemon.controller;
 			
 			return true;
 		}
+		
 
 		public void start()
 		{

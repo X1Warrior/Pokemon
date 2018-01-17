@@ -31,7 +31,7 @@ public class PokemonPanel extends JPanel
 	private JTextArea typeArea;
 
 	private JButton ResetButton;
-	private JButton SaveButton;
+	private JButton saveButton;
 	private JButton LoadButton;
 	private JComboBox pokedexDropdown;
 
@@ -52,7 +52,7 @@ public class PokemonPanel extends JPanel
 		appLayout = new SpringLayout();
 
 		ResetButton = new JButton("Reset");
-		SaveButton = new JButton("Save");
+		saveButton = new JButton("Save");
 		LoadButton = new JButton("Load");
 		
 		evolvableBox = new JCheckBox("");
@@ -135,7 +135,7 @@ public class PokemonPanel extends JPanel
 	{
 		this.setBackground(Color.CYAN);
 		this.setLayout(appLayout);
-		this.add(SaveButton);
+		this.add(saveButton);
 		this.add(ResetButton);
 		this.add(LoadButton);
 		this.add(modifierLabel);
@@ -300,6 +300,26 @@ public class PokemonPanel extends JPanel
 				updateImage();
 				updateTypePanels();
 				repaint();
+			}
+		});
+		
+		saveButton.addActionListener(new ActionListener() 
+		{
+			
+			public void actionPerformed(ActionEvent click)
+			{
+				if(appController.isValidInteger(attackField.getText()) && appController.isValidInteger(healthField.getText()) && appController.isValidDouble(modifierField.getText()))
+				{
+					int selected = pokedexDropdown.getSelectedIndex();
+					int health = Integer.parseInt(healthField.getText());
+					int attack = Integer.parseInt(attackField.getText());
+					double modify = Double.parseDouble(modifierField.getText());
+					String name = nameField.getText();
+					boolean evolve = evolvableBox.isSelected();
+					
+					//Send to the Controller to modif the Pokemon sice
+					appController.updateSelected(selected, health, attack, evolve, modify, name);
+				}
 			}
 		});
 	}
